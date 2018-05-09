@@ -6,7 +6,7 @@
 /*   By: lchappon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/17 14:51:34 by lchappon          #+#    #+#             */
-/*   Updated: 2018/01/25 17:37:54 by lchappon         ###   ########.fr       */
+/*   Updated: 2018/05/09 18:36:06 by lchappon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,8 @@ static int			start(char **buff, char **tmp, char **line)
 
 static int			free_return(char *tmp, int ret)
 {
-	if (ret == -1)
-	{
-		free(tmp);
-		return (-1);
-	}
-	else if (ret == 1)
-	{
-		free(tmp);
-		return (1);
-	}
-	return (0);
+	free(tmp);
+	return (ret);
 }
 
 int					get_next_line(int const fd, char **line)
